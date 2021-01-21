@@ -49,7 +49,9 @@ class Elevator:
                 self.open_door()
                 self.ascend.pop(0)
                 self.close_door()
-            self.direction == 'down'
+
+            self.direction = 'down'
+            print(self.direction)
 
         if self.direction == 'down':
             for floor in self.descend[:]:
@@ -66,11 +68,12 @@ class Elevator:
 
     # message that elevator is at desired floor 
     def open_door(self):
-        print('Door is opening')
+        print(f'You have arrived at floor {self.current_floor}. Door is opening.')
 
     def close_door(self):
         print('Door is closing')  
 
 elevator = Elevator(20, 7, 'up')
 print(elevator.elevator_location())
-print(elevator.elevator_in_motion(12,14,17,4,3,2))
+print(elevator.elevator_in_motion(12,1,3,4,14,17))
+
